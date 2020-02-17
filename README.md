@@ -36,6 +36,7 @@ Abra a solução com o seu IDE (no meu caso Visual Studio) e compile.
  - Pode ser feito pelo bash, terminal ou cmd através do comando `dotnet build`
 
 Execute o projeto `RabbitMQQueue` para enfileirar as mensagens na fila.
+
 Execute o projeto `RabbitMQConsumer` para consumir as mensagens da fila.
 
 ## Publicação
