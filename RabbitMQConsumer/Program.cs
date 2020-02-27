@@ -54,8 +54,10 @@ namespace RabbitMQConsumer
                         {
                             var body = ea.Body;
                             var headers = ea.BasicProperties.Headers;
+                            var otherInfo = string.Empty;
 
-                            var otherInfo = headers["other"];
+                            if (headers != null && headers.ContainsKey("other"))
+                                otherInfo = Encoding.Default.GetString(headers["other"] as byte[]);
 
                             var brokerMessage = Encoding.Default.GetString(ea.Body);
 

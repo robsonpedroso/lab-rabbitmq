@@ -66,11 +66,12 @@ namespace RabbitMQQueue
 
             Head.SendQueue(channel: channel, properties: propertiesHead, exchange: "exchange.headers", body: json);
 
-            IBasicProperties properties = channel.CreateBasicProperties();
-            properties.Persistent = true;
-
             Dictionary<string, object> dictionarybase = new Dictionary<string, object>();
             dictionarybase.Add("other", "info");
+
+            IBasicProperties properties = channel.CreateBasicProperties();
+            properties.Persistent = true;
+            properties.Headers = dictionarybase;
 
             Direct.SendQueue(channel: channel, properties: properties, exchange: "exchange.direct", queueName: "directexchange_key", body: json);
             Fanout.SendQueue(channel: channel, properties: properties, exchange: "exchange.fanout", body: json);
