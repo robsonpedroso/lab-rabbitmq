@@ -53,10 +53,14 @@ namespace RabbitMQConsumer
                         consumer.Received += (sender, ea) =>
                         {
                             var body = ea.Body;
+                            var headers = ea.BasicProperties.Headers;
+
+                            var otherInfo = headers["other"];
+
                             var brokerMessage = Encoding.Default.GetString(ea.Body);
 
                             Account account = JsonConvert.DeserializeObject<Account>(brokerMessage);
-                            Console.WriteLine($"Fila: {queueName}; E-mail: {account.Email}");
+                            Console.WriteLine($"Fila: {queueName}; E-mail: {account.Email}; Outras informações: { otherInfo ?? string.Empty }");
 
                             channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: true);
                         };

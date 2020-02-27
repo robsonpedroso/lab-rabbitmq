@@ -69,6 +69,9 @@ namespace RabbitMQQueue
             IBasicProperties properties = channel.CreateBasicProperties();
             properties.Persistent = true;
 
+            Dictionary<string, object> dictionarybase = new Dictionary<string, object>();
+            dictionarybase.Add("other", "info");
+
             Direct.SendQueue(channel: channel, properties: properties, exchange: "exchange.direct", queueName: "directexchange_key", body: json);
             Fanout.SendQueue(channel: channel, properties: properties, exchange: "exchange.fanout", body: json);
 
@@ -80,7 +83,7 @@ namespace RabbitMQQueue
             Console.Read();
         }
 
-        private static void SendQueue(string exchange, string routingKey, string body, int qtdQueue = 50)
+        private static void SendQueue()
         {
             string hostName = "192.168.33.10";
             string userName = "admin";
@@ -97,16 +100,27 @@ namespace RabbitMQQueue
             IConnection connection = factory.CreateConnection();
             IModel channel = connection.CreateModel();
 
-            IBasicProperties properties = channel.CreateBasicProperties();
-            properties.Persistent = true;
+            channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
 
-            //channel.QueueDeclare(queue: queueName, durable: true, exclusive: false, autoDelete: false, arguments: null);
-            byte[] content = Encoding.Default.GetBytes(body);
-
-            for (int i = 1; i <= qtdQueue; i++)
+            for (int i = 1; i <= 50; i++)
             {
-                //channel.BasicPublish(exchange: string.Empty, routingKey: queueName, basicProperties: properties, body: body);
-                channel.BasicPublish(exchange: exchange, routingKey: routingKey, basicProperties: properties, body: content);
+
+                string json = @"{
+                  'Email': 'robson@test.com',
+                  'Active': true,
+                  'CreatedDate': '2020-02-17T00:00:00Z',
+                  'Roles': [
+                    'User',
+                    'Admin'
+                  ]
+                }";
+
+                byte[] body = Encoding.Default.GetBytes(json);
+
+                IBasicProperties properties = channel.CreateBasicProperties();
+                properties.Persistent = true;
+
+                channel.BasicPublish(exchange: String.Empty, routingKey: queueName, basicProperties: properties, body: body);
             }
         }
     }
