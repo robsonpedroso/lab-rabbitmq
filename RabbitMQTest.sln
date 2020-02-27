@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQQueue", "RabbitMQTest\RabbitMQQueue.csproj", "{6D3DC906-A3E0-451B-90FE-A7009701D263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQQueue", "RabbitMQTest\RabbitMQQueue.csproj", "{6D3DC906-A3E0-451B-90FE-A7009701D263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQConsumer", "RabbitMQConsumer\RabbitMQConsumer.csproj", "{308CDEE7-474A-4180-B56E-F9495171DC85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitMQConsumer", "RabbitMQConsumer\RabbitMQConsumer.csproj", "{308CDEE7-474A-4180-B56E-F9495171DC85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{6FF1579F-03F5-45AA-8ED3-0308DB4B714F}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 		Vagrantfile = Vagrantfile
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQLib", "RabbitMQLib\RabbitMQLib.csproj", "{88F135B6-7240-4894-8CD0-A5DC6944A9C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{308CDEE7-474A-4180-B56E-F9495171DC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{308CDEE7-474A-4180-B56E-F9495171DC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{308CDEE7-474A-4180-B56E-F9495171DC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88F135B6-7240-4894-8CD0-A5DC6944A9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88F135B6-7240-4894-8CD0-A5DC6944A9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88F135B6-7240-4894-8CD0-A5DC6944A9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88F135B6-7240-4894-8CD0-A5DC6944A9C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
