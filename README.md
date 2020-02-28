@@ -6,6 +6,10 @@ Projeto para testar o RabbitMQ, enfileirando e consumindo.
 
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
 
+Segue uma boa referencia de estudos:
+
+[Tutorial RabbitMQ por Saineshwar Bageri](https://www.tutlane.com/tutorial/rabbitmq/rabbitmq-tutorial)
+
 ### Prerequisitos
 
 O que você precisa para baixar, rodar e disponibilizar.
@@ -50,3 +54,10 @@ Não foi publicado
 ## License
 
 Software feito apenas para fins de estudo
+
+## Ferramentas
+
+[RabbitMQ](https://www.rabbitmq.com/getstarted.html)
+[Vagrant](https://www.vagrantup.com/)
+[Dotnet](https://dotnet.microsoft.com/download)
+[VirtualBox](https://www.virtualbox.org/)
