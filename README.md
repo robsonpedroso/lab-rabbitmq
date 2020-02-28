@@ -57,7 +57,7 @@ Software feito apenas para fins de estudo
 
 ## Ferramentas
 
-[RabbitMQ](https://www.rabbitmq.com/getstarted.html)
-[Vagrant](https://www.vagrantup.com/)
-[Dotnet](https://dotnet.microsoft.com/download)
-[VirtualBox](https://www.virtualbox.org/)
+* [RabbitMQ](https://www.rabbitmq.com/getstarted.html)
+* [Vagrant](https://www.vagrantup.com/)
+* [Dotnet](https://dotnet.microsoft.com/download)
+* [VirtualBox](https://www.virtualbox.org/)
