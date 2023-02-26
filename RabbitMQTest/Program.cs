@@ -76,7 +76,11 @@ namespace RabbitMQQueue
             Direct.SendQueue(channel: channel, properties: properties, exchange: "exchange.direct", queueName: "directexchange_key", body: json);
             Fanout.SendQueue(channel: channel, properties: properties, exchange: "exchange.fanout", body: json);
 
-            Topic.SendQueue(channel: channel, properties: properties, exchange: "exchange.topic", queueName: "one.topic.test", body: json);
+            for (int i = 0; i < 50000; i++)
+            {
+                Topic.SendQueue(channel: channel, properties: properties, exchange: "exchange.topic", queueName: "one.topic.test", body: json);
+
+            }
             Topic.SendQueue(channel: channel, properties: properties, exchange: "exchange.topic", queueName: "two.topic.*", body: json);
             Topic.SendQueue(channel: channel, properties: properties, exchange: "exchange.topic", queueName: "other.atopic.test", body: json);
 
